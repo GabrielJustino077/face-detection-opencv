@@ -1,6 +1,6 @@
 # Detector de Rosto em Tempo Real
 
-Este projeto foi desenvolvido utilizando Python e OpenCV com o objetivo de aplicar conceitos básicos de visão computacional na detecção de rostos em tempo real.
+Este projeto foi desenvolvido utilizando Python e OpenCV com a finalidade de aplicar conceitos básicos de visão computacional na detecção de rostos em tempo real.
 
 ## Funcionalidades
 - Detecção de múltiplos rostos em tempo real
