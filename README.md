@@ -1,26 +1,37 @@
-# Detector de Rosto em Tempo Real
+# Detector de Rostos em Tempo Real
 
-Este projeto foi desenvolvido utilizando Python e OpenCV com a finalidade de aplicar conceitos básicos de visão computacional na detecção de rostos em tempo real.
+Projeto desenvolvido com Python e OpenCV para detecção de rostos em tempo real via webcam,
+como parte do meu aprendizado prático em visão computacional.
 
-## Funcionalidades
-- Detecção de múltiplos rostos em tempo real
-- Processamento de vídeo utilizando webcam
-- Aplicação de técnicas de visão computacional com OpenCV
+## Como funciona
 
-## Tecnologias Utilizadas
+O sistema utiliza o classificador *Haar Cascade* — um algoritmo de machine learning treinado
+com milhares de imagens de rostos que aprende a identificar padrões faciais (olhos, nariz,
+contorno do rosto). A cada frame capturado pela webcam, o algoritmo varre a imagem em busca
+desses padrões e marca os rostos detectados com um retângulo.
+
+Pipeline de processamento:
+1. Captura do frame da webcam
+2. Conversão para escala de cinza (reduz complexidade e melhora desempenho)
+3. Detecção de rostos com Haar Cascade
+4. Desenho de bounding boxes sobre os rostos encontrados
+5. Exibição do frame anotado em tempo real
+
+## Tecnologias
+
 - Python
 - OpenCV
 
 ## Como executar
 
 1. Instale as dependências:
-pip install opencv-python
+      pip install opencv-python
+2. Execute:
+     python detector.py
+3. Pressione **ESC** para encerrar.
 
-2. Execute o projeto:
-python detector.py
+## Aprendizados
 
-## Demonstração
-O sistema captura vídeo em tempo real e identifica rostos na imagem, destacando-os com retângulos.
-
-## Objetivo
-Este projeto foi desenvolvido com foco em aprendizado prático de visão computacional e processamento de imagens.
+O maior desafio foi entender como o OpenCV organiza e processa imagens — especialmente
+por que a conversão para escala de cinza é necessária antes da detecção, e como os
+parâmetros do `detectMultiScale` (escala e vizinhos mínimos) afetam a precisão.
